@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}SQLi Уровень 3 Hard - Теория{% endblock %}
+{% block content %}
+<h1>SQL Injection Уровень 3 Hard - Теория</h1>
+<p class="lead">
+    Даже при использовании параметризации, если входные данные не проверяются на корректность, уязвимость SQL-инъекции может сохраняться. В данном уровне используется параметризация, но отсутствует проверка типов данных, что открывает возможность для инъекций.
+</p>
+<a href="{{ url_for('sqli.level3hard_practice') }}" class="btn btn-primary">Перейти к практике</a>
+<br><br>
+<a href="{{ url_for('main_page') }}" class="btn btn-secondary">Вернуться в главное меню</a>
+{% endblock %}

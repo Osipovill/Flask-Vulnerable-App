@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Главное меню{% endblock %}
+{% block content %}
+<h1 class="mt-4">Добро пожаловать в уязвимое Flask-приложение</h1>
+
+<h2 class="mt-5">Сканирование приложения</h2>
+<ul class="list-group">
+    <li class="list-group-item"><a href="/scan">Сканирование приложения</a></li>
+</ul>
+
+<h2 class="mt-5">XSS Уровни</h2>
+<ul class="list-group">
+    <li class="list-group-item"><a href="/xss/level1">XSS Уровень 1</a></li>
+    <li class="list-group-item"><a href="/xss/level2">XSS Уровень 2</a></li>
+    <li class="list-group-item"><a href="/xss/level3">XSS Уровень 3</a></li>
+</ul>
+
+<h2 class="mt-5">SQL Injection Уровни</h2>
+<ul class="list-group">
+    <li class="list-group-item"><a href="/sqli/level1">SQLi Уровень 1</a></li>
+    <li class="list-group-item"><a href="/sqli/level2">SQLi Уровень 2</a></li>
+    <li class="list-group-item"><a href="/sqli/level3">SQLi Уровень 3</a></li>
+    <li class="list-group-item"><a href="/sqli/level3hard">SQLi Уровень 3 Hard</a></li>
+</ul>
+
+<h2 class="mt-5">SSTI Уровни</h2>
+<ul class="list-group">
+    <li class="list-group-item"><a href="/ssti/level1">SSTI Уровень 1</a></li>
+    <li class="list-group-item"><a href="/ssti/level2">SSTI Уровень 2</a></li>
+</ul>
+
+<h2 class="mt-5">RCE Уровень</h2>
+<ul class="list-group mb-5">
+    <li class="list-group-item"><a href="/rce/complex">RCE Уровень</a></li>
+</ul>
+{% endblock %}

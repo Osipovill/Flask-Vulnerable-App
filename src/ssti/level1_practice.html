@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}SSTI Уровень 1 - Практика{% endblock %}
+{% block content %}
+<h1>SSTI Уровень 1 - Практика</h1>
+<form method="get">
+    <div class="mb-3">
+        <label for="name" class="form-label">Имя:</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя">
+    </div>
+    <button type="submit" class="btn btn-success">Отправить</button>
+</form>
+<p>Попробуйте ввести что-нибудь вроде <code>{{ '{{7*7}}' }}</code> в поле имени или через параметр URL.</p>
+<br>
+<a href="{{ url_for('ssti.level1_theory') }}" class="btn btn-secondary">Вернуться к теории</a>
+<a href="{{ url_for('main_page') }}" class="btn btn-secondary">Главное меню</a>
+{% endblock %}

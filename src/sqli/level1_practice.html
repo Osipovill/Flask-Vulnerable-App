@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}SQLi Уровень 1 - Практика{% endblock %}
+{% block content %}
+<h1>SQLi Уровень 1 - Практика</h1>
+<form method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Имя пользователя:</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя пользователя">
+    </div>
+    <button type="submit" class="btn btn-success">Поиск</button>
+</form>
+{% if data %}
+    <h2 class="mt-4">Результаты запроса:</h2>
+    <pre>{{ data }}</pre>
+{% endif %}
+<br>
+<a href="{{ url_for('sqli.level1_theory') }}" class="btn btn-secondary">Вернуться к теории</a>
+<a href="{{ url_for('main_page') }}" class="btn btn-secondary">Главное меню</a>
+{% endblock %}

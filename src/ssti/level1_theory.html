@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}SSTI Уровень 1 - Теория{% endblock %}
+{% block content %}
+<h1>SSTI Уровень 1 - Теория</h1>
+<p class="lead">
+    <strong>Server-Side Template Injection (SSTI)</strong> возникает, когда пользовательский ввод напрямую используется в шаблоне без надлежащей обработки. Это позволяет злоумышленнику выполнять произвольный код на стороне сервера.
+</p>
+<p class="lead">
+    В этом уровне пользовательский ввод напрямую передается в функцию <code>render_template_string</code>, что делает возможной инъекцию кода.
+</p>
+<div class="alert alert-warning">
+    <h4>Информация об уязвимости</h4>
+    <p>
+        <strong>CWE-1336:</strong>
+        <a href="https://cwe.mitre.org/data/definitions/1336.html" target="_blank">Improper Neutralization of Special Elements Used in a Template Engine</a>
+    </p>
+    <p>
+        <strong>CVE:</strong>
+        <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-32651" target="_blank">CVE-2024-32651</a>,
+        <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28117" target="_blank">CVE-2024-28117</a>
+    </p>
+    <p>
+        <strong>БД Уязвимостей России:</strong>
+        <a href="https://bdu.fstec.ru/threat/ubi.049" target="_blank">УБИ.049: Угроза инъекции серверных шаблонов</a>
+    </p>
+</div>
+<a href="{{ url_for('ssti.level1_practice') }}" class="btn btn-primary">Перейти к практике</a>
+<br><br>
+<a href="{{ url_for('main_page') }}" class="btn btn-secondary">Вернуться в главное меню</a>
+{% endblock %}

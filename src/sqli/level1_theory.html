@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}SQLi Уровень 1 - Теория{% endblock %}
+{% block content %}
+<h1>SQL Injection Уровень 1 - Теория</h1>
+<p class="lead">
+    <strong>SQL-инъекция</strong> возникает, когда приложение использует пользовательский ввод в SQL-запросах без надлежащей обработки. Это позволяет злоумышленнику изменять структуру запроса и выполнять произвольные SQL-команды.
+</p>
+<p class="lead">
+    В этом уровне пользовательский ввод напрямую включается в запрос без какой-либо фильтрации или параметризации, что делает возможной простую SQL-инъекцию.
+</p>
+<div class="alert alert-warning">
+    <h4>Информация об уязвимости</h4>
+    <p>
+        <strong>CWE-89:</strong>
+        <a href="https://cwe.mitre.org/data/definitions/89.html" target="_blank">Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection').</a>
+    </p>
+    <p>
+        <strong>CVE:</strong>
+        <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-28242" target="_blank">CVE-2021-28242</a>,
+        <a href="https://nvd.nist.gov/vuln/detail/CVE-2023-39344" target="_blank">CVE-2023-39344</a>
+    </p>
+    <p>
+        <strong>БД Уязвимостей России:</strong>
+        <a href="https://bdu.fstec.ru/threat/ubi.031" target="_blank">УБИ.031: Угроза SQL-инъекции</a>
+    </p>
+</div>
+<a href="{{ url_for('sqli.level1_practice') }}" class="btn btn-primary">Перейти к практике</a>
+<br><br>
+<a href="{{ url_for('main_page') }}" class="btn btn-secondary">Вернуться в главное меню</a>
+{% endblock %}
