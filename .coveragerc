@@ -1,0 +1,7 @@
+[report]
+exclude_lines =
+    def run_tests():
+    logger.info
+    logger.error
+    subprocess.run
+    if result.returncode != 0
