@@ -1,0 +1,14 @@
+FROM nginx:latest
+
+# Устанавливаем необходимые пакеты
+RUN apt-get update && apt-get install -y iproute2 curl && apt-get clean
+
+# Копируем шаблон конфигурации и скрипт
+COPY nginx.conf.template /etc/nginx/nginx.conf.template
+COPY update_nginx_conf.sh /usr/local/bin/update_nginx_conf.sh
+
+# Устанавливаем права на выполнение скрипта
+RUN chmod +x /usr/local/bin/update_nginx_conf.sh
+
+# Обновляем конфигурацию перед запуском Nginx
+CMD /usr/local/bin/update_nginx_conf.sh && nginx -g "daemon off;"
